@@ -16,4 +16,7 @@
     "url": "https://github.com/TeoJT/my-website/issues"
   },
   "homepage": "https://github.com/TeoJT/my-website#readme"
+  "publishConfig": {
+    "@TeoJT:registry": "https://npm.pkg.github.com"
+  }
 }
