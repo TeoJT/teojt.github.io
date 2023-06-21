@@ -1,0 +1,248 @@
+body {
+    font: normal 20px/normal "Courier New", Courier, monospace;
+    background-color: rgb(43, 45, 53);
+    color:white;
+    margin:0px;
+    border:0px;
+}
+div.content {
+    padding:10px;
+}
+
+
+h1 {
+    font-family: 'Courier Prime', monospace;
+    font-size:34px
+}
+h2 {
+    font-family: 'Courier Prime', monospace;
+    font-size:28px
+}
+h3 {
+    font-family: 'Courier Prime', monospace;
+    font-size:22px
+}
+
+p1 {
+    font-size: 24px;
+}
+p2 {
+    font-size: 25.5px;
+}
+
+tiny1 {
+    font-size: 10px;
+}
+tiny2 {
+    font-size: 11.5px;
+}
+
+a {
+    color:rgb(202, 193, 255);
+    background-color:rgba(0, 0, 0, 0.356);
+    font-size:25px
+}
+
+
+.pixelated {
+    -ms-interpolation-mode: nearest-neighbor;
+    image-rendering: pixelated;
+}
+
+strong.mega {
+    font-size: 100px; 
+    
+}
+
+p {
+    font-size:20px;
+}
+
+button:hover {
+    opacity: 80%;
+    transition: all 0.5s ease-in-out;
+}
+
+
+section {
+    top:0px;
+    left:0px;
+    width: 48%;
+    margin: 10px;
+    padding:0px;
+    display:inline-block;
+    clear:none;
+}
+
+section:nth-child(2) {
+    float:left;
+
+}
+section:nth-child(3) {
+    float:right;
+}
+
+div.panels {
+    width:90%;
+    float:left;
+    background-color: rgb(112, 112, 112);
+    margin:10px;
+    padding:30px;
+}
+
+div.lister {
+    height: 90%;
+}
+
+a.lister {
+    -webkit-transition: opacity 1s ease-in-out, color 2s ease-in-out, -webkit-transform 1s ease-in-out;
+}
+
+
+button {
+    display: inline-block;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    padding: 10px 25px;
+    border: none;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    font: normal 24px/normal "Courier New", Courier, monospace;
+    color: rgb(255,255,255);
+    background: rgb(0,0,0);
+    opacity: 30%;
+    transition: all 0.5s ease-in-out;
+  }
+
+
+  div#rules {
+      float:left;
+      display:block;
+      padding:30px;
+      background-color:rgb(128, 128, 128);
+  }
+
+  p2.redAlert, p.redAlert {
+      color:red;
+      background-color: rgb(48, 48, 48);
+  }
+
+
+    @keyframes titleScroll {
+        from {background-position-x: 0px;}
+        to {background-position-x: 3000px;}
+    }
+
+    @keyframes panelWarning {
+    0% {background-color: rgb(112, 112, 112);}
+    50% {background-color: rgb(170, 112, 112);}
+    100% {background-color: rgb(112, 112, 112);}
+    }
+
+    .title {
+        /* background-color: rgb(113, 102, 133); */
+        background-image: url("../assets/legacy/mainmenutitlebar.png");
+        background-position-y: 400px;
+        width:auto;
+        margin:0px;
+        padding:20px;
+        animation-name: titleScroll;
+        animation-duration: 6.5s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+
+    footer {
+        background-color: rgba(0, 0, 0, 0.80);
+        height:auto;
+        position:fixed;
+        bottom:0px;
+        left:0px;
+        width:100%;
+        padding-left:30px;
+        padding-top:10px;
+        padding-bottom:10px;
+    }
+
+    @keyframes menuAppear {
+        from { opacity:0%; }
+        to {opacity:100%; }
+    }
+    @keyframes menuDisappear {
+        from { opacity:100%; }
+        to {opacity:0%; }
+    }
+    div.overlay.menu {
+        
+        background-color: rgba(59, 59, 59);
+        position: fixed;
+        left:20%;
+        top:10%;
+        width:60%;
+        height:80%;
+
+        padding:20px;
+
+        animation-name: menuAppear;
+        animation-duration: 0.2s;
+    }
+
+    @keyframes backgroundAppear {
+        from { opacity:0%; }
+        to { opacity:70%; }
+    }
+    @keyframes backgroundDisappear {
+        from { opacity:70%; }
+        to { opacity:0%; }
+    }
+
+    div.overlay.background {
+        background-color: rgb(0, 0, 0);
+        width:100%;
+        height:100%;
+        position: fixed;
+        top:0%;
+        left:0%;
+        opacity:70%;
+
+        animation-name: backgroundAppear;
+        animation-duration: 0.2s;
+    }
+
+    .xbutton {
+        opacity: 50%;
+        transition: opacity 0.2s;
+    }
+    .xbutton:hover {
+        transition: opacity 0.2s;
+        opacity: 100%
+    }
+
+
+    footer>p>a {
+        font-size:40px;
+    }
+
+    
+    div.bonusInfo {
+        width:auto;
+        bottom: 0px;
+        left: 0px;
+
+        background-color: rgb(141, 128, 72);
+        width:90%;
+        float:left;
+
+        margin:10px;
+        margin-top:0px;
+        margin-bottom:10px;
+        padding-left:30px;
+        padding-right:30px;
+        padding-top:5px;
+        padding-bottom:5px;
+
+    }
+
+
+
