@@ -1,0 +1,22 @@
+{
+  "name": "my-website",
+  "version": "0.0.0",
+  "description": "My personal website",
+  "main": "index.js",
+  "scripts": {
+    "test": "tput setaf 4; echo \"Test\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TeoJT/my-website.git"
+  },
+  "author": "TeoJT",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TeoJT/my-website/issues"
+  },
+  "homepage": "https://github.com/TeoJT/my-website#readme"
+  "publishConfig": {
+    "@TeoJT:registry": "https://npm.pkg.github.com"
+  }
+}
