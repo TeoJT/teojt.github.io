@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<!--
+	Taken from another old project, this is the basis of
+	the legacy css file that I'm re-using for this project.
+-->
+
+
+<html>
+	<head>
+		<title>The Stack</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="/styles/new_styles.css">
+		<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@700&display=swap" rel="stylesheet">
+		<link rel="icon" href="/assets/legacy/starbit.png">
+	</head>
+
+	<style>
+		
+	</style>
+
+	<body>
+		<div class="title">
+			<h1>Blog</h1>
+		</div>
+		<div class="content">
+            {% for post in site.posts %}
+              <article>
+                <h2>
+                  <a href="{{ post.url }}">
+                    {{ post.title }}
+                  </a>
+                </h2>
+                <time datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date_to_long_string }}</time>
+              </article>
+            {% endfor %}
+		</div>
+		<br>
+		<br>
+
+        <footer>
+            <a href="/index.html">Back</a>
+        </footer>
+
+
+		
+
+	</body>
+</html>
+
