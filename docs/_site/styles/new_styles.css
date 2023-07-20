@@ -69,4 +69,10 @@ img.center {
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+
+    /* Align to the right with text to the left */
+    float: right;
+    margin: 0px 0px 15px 15px;
+    
 }
+
