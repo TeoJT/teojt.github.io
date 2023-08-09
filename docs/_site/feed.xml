@@ -1,4 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-07-20T18:43:25+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">The Stack</title><subtitle>Welcome to my personal site.</subtitle><entry><title type="html">Timeway: My solution to the visibility problem.</title><link href="http://localhost:4000/2023/07/20/z-sorting.html" rel="alternate" type="text/html" title="Timeway: My solution to the visibility problem." /><published>2023-07-20T15:15:19+01:00</published><updated>2023-07-20T15:15:19+01:00</updated><id>http://localhost:4000/2023/07/20/z-sorting</id><content type="html" xml:base="http://localhost:4000/2023/07/20/z-sorting.html">&lt;p&gt;Heya!&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-08-09T16:15:50+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">The Stack</title><subtitle>Welcome to my personal site.</subtitle><entry><title type="html">Timeway: New releases and usage guide!</title><link href="http://localhost:4000/2023/07/31/timeway_002_release.html" rel="alternate" type="text/html" title="Timeway: New releases and usage guide!" /><published>2023-07-31T21:08:45+01:00</published><updated>2023-07-31T21:08:45+01:00</updated><id>http://localhost:4000/2023/07/31/timeway_002_release</id><content type="html" xml:base="http://localhost:4000/2023/07/31/timeway_002_release.html">&lt;p&gt;Heya!&lt;/p&gt;
+
+&lt;p&gt;A few days ago (or a month at this point), I released version 0.0.2, followed by version 0.0.3 and 0.0.4 of Timeway which is significantly different from the first version, and has tons of new features to the point where I decided to dedicate this blog post as a guide on how to use it. If you wanna try it out, read on below!&lt;/p&gt;
+
+&lt;p&gt;This guide will be relevant for the latest version of Timeway, 0.0.4.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/screenie_239432.png&quot; style=&quot;width:50%&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;When you launch Timeway, you will be taken to the Pixel Realm; a representation of your drive’s files in a 3D world.&lt;/p&gt;
+
+&lt;p&gt;Use WASD to move, Q &amp;amp; E to look left and right, and left click and right click to interact with file objects. If you’re on laptop and/or can’t use left/right click, I’ll explain how to change keybindings later below.&lt;/p&gt;
+
+&lt;p&gt;These are portals. They actually folders on your computer. Walk into it to enter this folder.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/screen_sjkdfal.png&quot; style=&quot;width:50%&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You can walk into the portal you emerge from to return to the previous directory.&lt;/p&gt;</content><author><name></name></author><summary type="html">Heya!</summary></entry><entry><title type="html">Timeway: My solution to the visibility problem.</title><link href="http://localhost:4000/2023/07/20/z-sorting.html" rel="alternate" type="text/html" title="Timeway: My solution to the visibility problem." /><published>2023-07-20T15:15:19+01:00</published><updated>2023-07-20T15:15:19+01:00</updated><id>http://localhost:4000/2023/07/20/z-sorting</id><content type="html" xml:base="http://localhost:4000/2023/07/20/z-sorting.html">&lt;p&gt;Heya!&lt;/p&gt;
 
 &lt;p&gt;So it’s been a while since I’ve created a post and admittedly, it’s because I forgot about this website and because I’ve been having so much fun developing Timeway. I’ll share another update post on the latest features soon, but for now I want to focus on one of the graphical limitations that I faced and how to fix it. This is going to get pretty technical by the way, so prepare for the most nerdiest nerding about 3D engines.&lt;/p&gt;
 
