@@ -9,6 +9,9 @@
     "windows-stability": 5,
     "linux-stability": 1,
     "macos-stability": 3,
+    "windows-download-size": 197799,
+    "linux-download-size": 14028,
+    "macos-download-size": 1,
     "update-if-incompatible": false,
     "incompatible-warning": "[default]",
     "priority": 1, 
@@ -36,7 +39,7 @@
     "error-handler": "[none]",
     "display-header": "[default]",
     "display-message": "[default]",
-    "message-footer": "This update should take approx. 5 minutes.\nDon't worry! None of your data will be lost.",
+    "display-footer": "This update should take approx. 5 minutes.\nDon't worry! None of your data will be lost.",
     "additional-message": "[none]",
     "warnings": "[none]",
     "patch-notes": "Added camera\nAdded grabber n stuff\nFixed bugs"
