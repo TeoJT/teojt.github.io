@@ -1,11 +1,11 @@
 {
     "info-version": "0.1",
     "timeway-name": "Timeway",
-    "update-name": "Timeway v0.0.4-test",
-    "version": "0.0.4-test",
+    "update-name": "Timeway v0.0.4",
+    "version": "0.0.4",
     "type": "update",
     "release-date": "11-08-2023",
-    "compatible-versions": ["0.0.3", "0.0.2", "0.0.1", "0.0.4"],
+    "compatible-versions": ["0.0.3", "0.0.2", "0.0.1"],
     "windows-stability": 5,
     "linux-stability": 0,
     "macos-stability": 0,
@@ -45,5 +45,5 @@
     "display-footer": "This update should take approx. 5 minutes.\nPlease note your cache and config files will be reset. You can move them from the old version to the new version.",
     "additional-message": "[none]",
     "warnings": "[none]",
-    "patch-notes": "Added camera\nAdded grabber n stuff\nFixed bugs"
+    "patch-notes": "- Added updater\n- Added camera\n- Bug fixes"
 }
