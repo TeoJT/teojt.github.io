@@ -19,7 +19,7 @@
     "incompatible-warning": "[default]",
     "priority": 1, 
     "force-update": false,
-    "windows-download": "https://github.com/TeoJT/timeway/releases/download/v0.0.4/timeway_windows_64.zip",
+    "windows-download": "https://github.com/TeoJT/timeway/releases/download/v0.0.4/https://github.com/TeoJT/timeway/releases/download/v0.0.4/timeway_windows_0-0-4.zip.zip",
     "linux-download": "null",
     "macos-download": "null",
     "install-location": "[default]",
