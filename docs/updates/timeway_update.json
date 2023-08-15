@@ -5,7 +5,7 @@
     "version": "0.0.2",
     "type": "update",
     "release-date": "11-08-2023",
-    "compatible-versions": ["0.0.3", "0.0.2", "0.0.1"],
+    "compatible-versions": ["0.0.3", "0.0.2", "0.0.1", "0.0.4"],
     "windows-stability": 5,
     "linux-stability": 1,
     "macos-stability": 3,
