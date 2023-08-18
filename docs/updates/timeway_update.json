@@ -19,7 +19,7 @@
     "incompatible-warning": "[default]",
     "priority": 1,
     "force-update": false,
-    "windows-download": "INSERT HERE",
+    "windows-download": "https://github.com/TeoJT/timeway/releases/download/v0.0.5/timeway_windows_0_0_5.zip",
     "linux-download": "null",
     "macos-download": "null",
     "install-location": "[default]",
