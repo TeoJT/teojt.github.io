@@ -1,0 +1,66 @@
+{
+  "render_distance": 6,
+  "objects3d": [
+    {
+      "filename": "docs",
+      "x": 11.810302734375,
+      "y": 0,
+      "scale": 1,
+      "z": -212.4478759765625
+    },
+    {
+      "filename": "2023-06-25-hello_world.md",
+      "x": 188.77432250976562,
+      "y": 0,
+      "scale": 1,
+      "z": -733.260009765625
+    },
+    {
+      "filename": "2023-06-27-timeway_released.md",
+      "x": 522.9351196289062,
+      "y": 0,
+      "scale": 1,
+      "z": -45.575714111328125
+    },
+    {
+      "filename": "2023-07-20-z-sorting.md",
+      "x": 388.913818359375,
+      "y": 0,
+      "scale": 1,
+      "z": -546.4959716796875
+    },
+    {
+      "filename": "2023-07-31-timeway_002_release.md",
+      "x": -68.03857421875,
+      "y": 0,
+      "scale": 1,
+      "z": -325.68963623046875
+    },
+    {
+      "filename": "2023-12-20-Programming;-blog-update.md",
+      "x": 624.573486328125,
+      "y": 0,
+      "scale": 1,
+      "z": 207.85256958007812
+    },
+    {
+      "filename": "Programming; blog update.timewayentry",
+      "x": 1421.810546875,
+      "y": 0,
+      "scale": 1,
+      "z": 674.9842529296875
+    },
+    {
+      "filename": "Programming; Timeway entries in a website.timewayentry",
+      "x": 1470.218994140625,
+      "y": 0,
+      "scale": 1,
+      "z": 427.1046142578125
+    }
+  ],
+  "coins": false,
+  "compatibility_version": "1.0",
+  "hill_frequency": 0.5,
+  "ground_size": 400,
+  "hill_height": 0
+}

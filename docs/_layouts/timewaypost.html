@@ -1,0 +1,63 @@
+---
+layout: "timewaypost"
+---
+<!DOCTYPE html>
+<!--
+	Taken from another old project, this is the basis of
+	the legacy css file that I'm re-using for this project.
+-->
+
+
+<html>
+	<head>
+		<title>{{page.title}}</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="/styles/new_styles.css">
+		<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@700&display=swap" rel="stylesheet">
+		<link rel="icon" href="{{ 'assets/legacy/starbit.png' | relative_url }}">
+	</head>
+
+    <style>
+        body {
+            background-color: #0F0F0E;
+            margin: 0px;
+            font-family: "Courier New", Courier, monospace;
+        }
+        div.textelement {
+            white-space: nowrap;
+        }
+        div.page {
+            left: 0px;
+            position: absolute;
+            top: 0px;
+        }
+    </style>
+    <!-- A lil javascript which automatically adjusts the scale of
+            the page to fit the screen. -->
+    <script>
+        function resize() {
+            var scale = (window.innerWidth-50) / 1500;
+            console.log(window.innerWidth);
+            pageElement = document.getElementsByClassName("page")[0];
+            pageElement.style.transform = "scale("+scale+")";
+        }
+        window.onresize = resize;
+        window.onload = resize;
+    </script>
+
+	<body>
+		<!-- Have a little spacing between the title -->
+		<div class="content">
+			{{ content }}
+		</div>
+		<br>
+		<br>
+
+
+		<footer>
+            <a href="/blog.html">Back</a>
+        </footer>
+
+	</body>
+</html>
+
