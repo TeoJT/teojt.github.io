@@ -1,0 +1,12 @@
+---
+layout: timewaypost
+title: "Timeway- New portals"
+date: { 2023-12-22 13:17 +0100 }
+---
+
+<div class="page">
+<div class="textelement" id="013" style="position: absolute; top: 455px; left: 16px; font-size: 16px; color: #909090;">In this video, I go around showing the portal effect<br>on various portals with custom skies. The last portal<br>I show has the same sky as the current realm I was<br>in, so I was showing how it "aligns".</div><div class="textelement" id="009" style="position: absolute; top: 185px; left: 532px; font-size: 24px; color: #ffde96;">You can see the realm's sky that belongs to this portal. The viewport<br>of the sky updates as you turn your head or look at it from a<br>different position.</div><div class="textelement" id="title" style="position: absolute; top: 0px; left: 25px; font-size: 60px; color: #cab9ff;">Timeway- New portals</div><div class="textelement" id="001" style="position: absolute; top: 3px; left: 1267px; font-size: 26px; color: #cab9ff;">22/12/2023<br>13:17:42</div><div class="textelement" id="010" style="position: absolute; top: 288px; left: 530px; font-size: 22px; color: #ffc64b;">I managed to do this using GLSL shaders, and by concurrently loading the<br>realm's sky into memory. Originally, I was going to scale down the skies as<br>cache to improve performance, but the impact on performance was minimal,<br>and it looked so amazing first try that I decided to leave it as is. It also<br>uses a surprisingly low amount of memory for such a large amount of<br>textures in memory; it uses only 100MB/1024MB in my realm with the largest<br>amount of portals with custom skies.</div><div class="textelement" id="011" style="position: absolute; top: 510px; left: 529px; font-size: 24px; color: #ffae00;">I will explain the technical details in my next blog post!</div><div class="textelement" id="002" style="position: absolute; top: 68px; left: 24px; font-size: 30px; color: #FFFFFFFF;">Hey, I wanted to show the newest portal styles in Timeway that I added not too long<br>ago, I think it's pretty neat! Here's a video of it in action:</div>
+
+<video controls="" preload autoplay muted name="media" style="position: absolute; top: 165px; left: 10px; height: 250px;">
+<source src="{{ './images/llsldkk.mp4' | relative_url }}" type="video/mp4">
+</video>

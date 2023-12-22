@@ -36,7 +36,8 @@ layout: "timewaypost"
             the page to fit the screen. -->
     <script>
         function resize() {
-            var scale = (window.innerWidth-50) / 1500;
+            const EXTEND = 100;
+            var scale = (window.innerWidth-EXTEND) / 1500;
             console.log(window.innerWidth);
             pageElement = document.getElementsByClassName("page")[0];
             pageElement.style.transform = "scale("+scale+")";

@@ -44,6 +44,13 @@
       "z": 207.85256958007812
     },
     {
+      "filename": "2023-12-20-Programming;-Timeway-entries-in-a-website.md",
+      "x": 1600.2293701171875,
+      "y": 0,
+      "scale": 1,
+      "z": 192.59848022460938
+    },
+    {
       "filename": "Programming; blog update.timewayentry",
       "x": 1421.810546875,
       "y": 0,
@@ -56,11 +63,18 @@
       "y": 0,
       "scale": 1,
       "z": 427.1046142578125
+    },
+    {
+      "filename": "Timeway- New portals.timewayentry",
+      "x": 1172.7257080078125,
+      "y": 0,
+      "scale": 1,
+      "z": 1038.899658203125
     }
   ],
   "coins": false,
   "compatibility_version": "1.0",
   "hill_frequency": 0.5,
-  "ground_size": 400,
+  "ground_size": 500,
   "hill_height": 0
 }

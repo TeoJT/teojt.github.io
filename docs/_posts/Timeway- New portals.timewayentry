@@ -1,0 +1,75 @@
+[
+  {
+    "size": 16,
+    "color": -7303024,
+    "x": 16,
+    "y": 676,
+    "ID": "013",
+    "text": "In this video, I go around showing the portal effect\non various portals with custom skies. The last portal\nI show has the same sky as the current realm I was\nin, so I was showing how it \"aligns\".",
+    "type": 1
+  },
+  {
+    "size": 24,
+    "color": -8554,
+    "x": 532,
+    "y": 406,
+    "ID": "009",
+    "text": "You can see the realm's sky that belongs to this portal. The viewport\nof the sky updates as you turn your head or look at it from a\ndifferent position.",
+    "type": 1
+  },
+  {
+    "size": 60,
+    "color": -3491329,
+    "x": 25,
+    "y": 221,
+    "ID": "title",
+    "text": "Timeway- New portals",
+    "type": 1
+  },
+  {
+    "size": 26,
+    "color": -3491329,
+    "x": 1267,
+    "y": 224,
+    "ID": "001",
+    "text": "22/12/2023\n13:17:42",
+    "type": 1
+  },
+  {
+    "size": 22,
+    "color": -14773,
+    "x": 530,
+    "y": 509,
+    "ID": "010",
+    "text": "I managed to do this using GLSL shaders, and by concurrently loading the\nrealm's sky into memory. Originally, I was going to scale down the skies as\ncache to improve performance, but the impact on performance was minimal,\nand it looked so amazing first try that I decided to leave it as is. It also\nuses a surprisingly low amount of memory for such a large amount of\ntextures in memory; it uses only 100MB/1024MB in my realm with the largest\namount of portals with custom skies.",
+    "type": 1
+  },
+  {
+    "size": 24,
+    "color": -20992,
+    "x": 529,
+    "y": 731,
+    "ID": "011",
+    "text": "I will explain the technical details in my next blog post!",
+    "type": 1
+  },
+  {
+    "size": 30,
+    "color": -1,
+    "x": 24,
+    "y": 289,
+    "ID": "002",
+    "text": "Hey, I wanted to show the newest portal styles in Timeway that I added not too long\nagom, I think it's pretty neat! Here's a video of it in action:",
+    "type": 1
+  },
+  {
+    "imgName": "cache-1231380864",
+    "hi": 282,
+    "wi": 361,
+    "x": 105,
+    "png": "iVBORw0KGgoAAAANSUhEUgAAABcAAAASCAYAAACw50UTAAAAH0lEQVR42mOQlZX9TyvMMGr4qOGjho8aPmr4qOGEMACahikzoUH2ugAAAABJRU5ErkJggg==",
+    "y": 381,
+    "ID": "007",
+    "type": 2
+  }
+]
