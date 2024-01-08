@@ -1,0 +1,94 @@
+[
+  {
+    "size": 30,
+    "color": -1,
+    "x": 1263,
+    "y": 250,
+    "ID": "001",
+    "text": "08/01/2024\n20:26:01",
+    "type": 1
+  },
+  {
+    "imgName": "cache-1751271424",
+    "hi": 35,
+    "wi": 616,
+    "x": 5,
+    "png": "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",
+    "y": 733,
+    "ID": "010",
+    "type": 2
+  },
+  {
+    "size": 16,
+    "color": -1,
+    "x": 464,
+    "y": 388,
+    "ID": "006",
+    "text": "This error was saying that the Timeway engine could not be found, which is basically the entire code of Timeway.\nStrange errors like these usually meant that there is unbalanced brackets somewhere in the code.",
+    "type": 1
+  },
+  {
+    "size": 26,
+    "color": -1,
+    "x": 8,
+    "y": 450,
+    "ID": "007",
+    "text": "So I checked for unbalanced brackets. I found nothing.\nI checked all the code I wrote \u0016thoroughly. I found nothing.\nI checked all the scripts in Timeway. I found nothing.\nI opened a new Java project and copy and pasted the code.\nI then deleted parts of the code one at a time, checking to see if that got rid of the error.\nI removed almost all lines of code, and I still kept getting the error.\nThe only code I hadn't deleted was the variables.\nTurns out...",
+    "type": 1
+  },
+  {
+    "size": 30,
+    "color": -20992,
+    "x": 763,
+    "y": 722,
+    "ID": "012",
+    "text": "",
+    "type": 1
+  },
+  {
+    "imgName": "cache-1041201536",
+    "hi": 47,
+    "wi": 449,
+    "x": 6,
+    "png": "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",
+    "y": 396,
+    "ID": "005",
+    "type": 2
+  },
+  {
+    "size": 30,
+    "color": -20992,
+    "x": 9,
+    "y": 776,
+    "ID": "011",
+    "text": "It was that specific line of code.\nThat was the hardest syntax error I've ever had to solve in my life.",
+    "type": 1
+  },
+  {
+    "size": 60,
+    "color": -1,
+    "x": 20,
+    "y": 230,
+    "ID": "title",
+    "text": "i found a bug in java",
+    "type": 1
+  },
+  {
+    "size": 18,
+    "color": -8554,
+    "x": 13,
+    "y": 335,
+    "ID": "003",
+    "text": "I was programming in Java (as usual). I went to go test my program after writing some code.\nBut I encountered an error.",
+    "type": 1
+  },
+  {
+    "size": 30,
+    "color": -1,
+    "x": 20,
+    "y": 294,
+    "ID": "002",
+    "text": "Story time.",
+    "type": 1
+  }
+]
