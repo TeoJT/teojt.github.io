@@ -179,21 +179,25 @@ function modifyDownloadInfo(text) {
 
 const LATEST_VERSION = "0.1.1";
 const DW_WINDOWS_AVAILABLE = true;
-const DW_LINUX_AVAILABLE = false;
+const DW_LINUX_AVAILABLE = true;
 
 const DLSIZE_WINDOWS_TEMPLATES = 993;
-const DLSIZE_WINDOWS_NOTEMPLATES = 993;
+const DLSIZE_WINDOWS_NOTEMPLATES = 403;
 
-const DLSIZE_LINUX_TEMPLATES = 0;
-const DLSIZE_LINUX_NOTEMPLATES = 0;
+const DLSIZE_LINUX_TEMPLATES = 708;
+const DLSIZE_LINUX_NOTEMPLATES = 139;
 
 var templates = true;
 var selectedVersion = LATEST_VERSION;
 
-function setDownload(size, templatesSize) {
-    var downloadInfo = "Timeway "+selectedVersion+"⠀⠀⠀⠀⠀⠀  Download size: "+size+"MB";
-    if (!templates) {
-        const sizeDifference = templatesSize-size;
+function setDownload(templatesSize, nontemplatesSize) {
+    var downloadInfo = "Timeway "+selectedVersion;
+    if (templates) {
+        downloadInfo += "⠀⠀⠀⠀⠀⠀  Download size: "+templatesSize+"MB";
+    }
+    else {
+        downloadInfo += "⠀⠀⠀⠀⠀⠀  Download size: "+nontemplatesSize+"MB";
+        const sizeDifference = templatesSize-nontemplatesSize;
         downloadInfo += " (-"+sizeDifference+"MB)";
     }
     modifyDownloadInfo(downloadInfo);
@@ -208,7 +212,7 @@ var osSelected = 0;
 function selectWindows() {
     osSelected = WINDOWS;
     if (DW_WINDOWS_AVAILABLE) {
-        setDownload(DLSIZE_WINDOWS_TEMPLATES, DLSIZE_WINDOWS_TEMPLATES);
+        setDownload(DLSIZE_WINDOWS_TEMPLATES, DLSIZE_WINDOWS_NOTEMPLATES);
         setDownloadButtonVisible(true);
     }
     else {
@@ -220,7 +224,7 @@ function selectWindows() {
 function selectLinux() {
     osSelected = LINUX;
     if (DW_LINUX_AVAILABLE) {
-        setDownload(DLSIZE_LINUX_TEMPLATES, DLSIZE_LINUX_TEMPLATES);
+        setDownload(DLSIZE_LINUX_TEMPLATES, DLSIZE_LINUX_NOTEMPLATES);
         setDownloadButtonVisible(true);
     }
     else {
@@ -252,14 +256,14 @@ function download() {
         if (templates) {
             window.location.href = 'https://github.com/TeoJT/timeway/releases/download/v0.1.1/timeway_windows_0_1_1.zip';
         } else {
-            alert("Not available yet!");
+            window.location.href = 'https://github.com/TeoJT/timeway/releases/download/v0.1.1/timeway_windows_0_1_1_notemplates.zip';
         }
     }
     else if (osSelected == LINUX) {
         if (templates) {
-            alert("Not available yet!");
+            window.location.href = 'https://github.com/TeoJT/timeway/releases/download/v0.1.1/timeway_linux_0_1_1.tar.xz'
         } else {
-            alert("Not available yet!");
+            window.location.href = 'https://github.com/TeoJT/timeway/releases/download/v0.1.1/timeway_linux_0_1_1_notemplates.tar.xz';
         }
     }
 }
@@ -356,7 +360,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 <div style="text-align: center;">
     <h2>Timeway is a open-source passion project!</h2>
     <br />
-    <h3>Check it out on Github:</h3>
+    <h3>Check it out on GitHub:</h3>
     <a href="https://github.com/TeoJT/timeway">
         <img src="/images/github-icon-2.svg" style="width:250px; height=250px;" />
     </a>
