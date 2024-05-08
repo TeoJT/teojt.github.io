@@ -1,17 +1,45 @@
 @import "legacy_style.css";
 
-@keyframes appear {
+@keyframes appear_left {
     0% { left: 0%; opacity: 0; }
     20% { opacity: 0; }
     100% { opacity: 1; }
 }
-    
-:root {
-    color-scheme: dark;
+
+@keyframes appear_down {
+    0% { top: -10%; opacity: 0; }
+    20% { opacity: 0; }
+    100% { opacity: 1;}
 }
 
-body {
-    background-color: rgb(29, 29, 29);
+@keyframes just_fade {
+    0% { opacity: 0; }
+    20% { opacity: 0; }
+    100% { opacity: 1;}
+}
+
+@keyframes bop {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes fade_in_bop {
+    from {
+        opacity: 0; /* Make it invisible at the start */
+    }
+    to {
+        opacity: 1; /* Make it fully visible at the end of the animation */
+    }
+}
+
+.twicon {
+    opacity: 0;
+    animation-name: fade_in_bop, bop;
+    animation-duration: 1s, 2s;
+    animation-timing-function: ease-in-out, ease-in-out;
+    animation-iteration-count: 1, infinite;
+    animation-fill-mode: forwards, none; 
 }
 
 div.scribble_container {
@@ -46,9 +74,24 @@ h1.cool_title {
     -webkit-text-fill-color: transparent; 
     -moz-text-fill-color: transparent;
     animation-timing-function: ease-out;
-    animation-name: appear;
+    animation-name: appear_left;
     animation-duration: 1.5s;
 }
+
+.timeway_cool_title {
+    animation-timing-function: ease-out;
+    animation-name: appear_down;
+    animation-duration: 1.5s;
+    top: 10%
+}
+
+.fade_in {
+    animation-timing-function: ease-out;
+    animation-name: just_fade;
+    animation-duration: 1.5s;
+}
+
+
 
 a {
     /* Default text style */
@@ -74,5 +117,58 @@ img.center {
     float: right;
     margin: 0px 0px 15px 15px;
     
+}
+
+button.btn_timeway {
+    /* Button with a clear fill and white outlline */
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+button.btn_timeway_selected {
+    /* Button with a clear fill and white outlline */
+    background-color: white;
+    color: black;
+    border: 2px solid white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+
+button.checkbox_timeway {
+    /* Checkbox with a clear fill and white outline */
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 10px;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    margin-right: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 10px;
+}
+
+button.checkbox_timeway_selected {
+    /* Checkbox with a clear fill and white outline */
+    background-color: white;
+    color: black;
+    border: 2px solid white;
+    padding: 10px;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    margin-right: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 10px;
 }
 

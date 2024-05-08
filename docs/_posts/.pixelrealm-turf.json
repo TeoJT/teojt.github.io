@@ -51,6 +51,34 @@
       "z": 192.59848022460938
     },
     {
+      "filename": "2023-12-22-Timeway--New-portals.md",
+      "x": 1039.6966552734375,
+      "y": 0,
+      "scale": 1,
+      "z": 1427.264404296875
+    },
+    {
+      "filename": "2024-01-07-What-I-learned-in-2023.md",
+      "x": 1879.2738037109375,
+      "y": 0,
+      "scale": 1,
+      "z": 1073.17919921875
+    },
+    {
+      "filename": "2024-01-08-i-found-a-bug-in-java.md",
+      "x": 2209.26416015625,
+      "y": 0,
+      "scale": 1,
+      "z": 1044.619384765625
+    },
+    {
+      "filename": "i found a bug in java.timewayentry",
+      "x": 1635.00390625,
+      "y": 0,
+      "scale": 1,
+      "z": -410.6570739746094
+    },
+    {
       "filename": "Programming; blog update.timewayentry",
       "x": 1421.810546875,
       "y": 0,
@@ -70,6 +98,27 @@
       "y": 0,
       "scale": 1,
       "z": 1038.899658203125
+    },
+    {
+      "filename": "timeway_website.timewayentry",
+      "x": 2434.697998046875,
+      "y": 0,
+      "scale": 1,
+      "z": 508.923583984375
+    },
+    {
+      "filename": "What I learned in 2023.timewayentry",
+      "x": 1811.406494140625,
+      "y": 0,
+      "scale": 1,
+      "z": 1107.7100830078125
+    },
+    {
+      "filename": "What I learned in 2023.timewayentry.html",
+      "x": 2166.013671875,
+      "y": 0,
+      "scale": 1,
+      "z": 1107.833984375
     }
   ],
   "coins": false,
