@@ -101,7 +101,7 @@ function selectWindows() {
             window.location.href = 'https://github.com/TeoJT/timeway/releases/download/v0.1.2/timeway_windows_0_1_2.zip';
             showThankYouScreen();
         } else {
-            window.location.href = 'https://github.com/TeoJT/timeway/releases/download/v0.1.1/timeway_windows_0_1_2_notemplates.zip';
+            window.location.href = 'https://github.com/TeoJT/timeway/releases/download/v0.1.2/timeway_windows_0_1_2_notemplates.zip';
             showThankYouScreen();
         }
     }
