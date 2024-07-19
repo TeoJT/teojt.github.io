@@ -26,7 +26,7 @@ title: Timeway
 
 
 
-<div style="position: absolute; top: 500px; left: 2.5%; width: 95%">
+<div style="position: absolute; top: 800px; left: 2.5%; width: 95%">
 <hr>
 <h3>Timeway is a whimsical, dream-like explorer application that transforms your computer files into a universe.</h3>
 
@@ -55,7 +55,7 @@ title: Timeway
 <div style="display: flex; align-items: center;">
     <div style="flex: 1;">
         <h3>Not just an explorer.</h3>
-        <p>Timeway features an editor similar to Microsoft's Onenote; you can create notes, paste images, and take photos with your camera. Timeway is also your productivity platform. All with the added benefit that your data stays on your computer- no expensive, privacy-infringing cloud systems in the way.</p>
+        <p>Timeway features an editor similar to Microsoft's Onenote; you can create notes, paste images, and take photos with your camera. Timeway is also your productivity platform.</p>
     </div>
     <div style="flex: 1;">
         <img src="/images/timeway_3.png" style="width: 100%;">
@@ -78,114 +78,61 @@ title: Timeway
 <hr>
 
 <script>
-const WINDOWS = 1;
-const LINUX = 2;
 
-function selectButton(button) {
-    // Get all buttons with class "btn_timeway"
-    const buttons = document.getElementsByClassName("os_select");
-
-    // Loop through all buttons
-    for (let i = 0; i < buttons.length; i++) {
-        // Remove "btn_timeway_selected" class from all buttons
-        buttons[i].classList.remove("btn_timeway_selected");
-
-        // Add "btn_timeway" class to all buttons
-        buttons[i].classList.add("btn_timeway");
-    }
-
-    // Add "btn_timeway_selected" class to the selected button
-    button.classList.add("btn_timeway_selected");
-}
-
-function detectOSAndSelectButton() {
-    var os = getOS();
-    var windowsButton = document.querySelector('.os_windows');
-    var linuxButton = document.querySelector('.os_linux');
-
-    if (os === 'Windows') {
-        windowsButton.click();
-    } else if (os === 'Linux') {
-        linuxButton.click();
-    } else {
-        windowsButton.click(); // Select windows by default for unsupported OS
-    }
-}
-
-function getOS() {
-    var OSName = "Unknown";
-    if (window.navigator.userAgent.indexOf("Windows NT 10.0")!= -1) OSName="Windows";
-    if (window.navigator.userAgent.indexOf("Windows NT 6.3") != -1) OSName="Windows";
-    if (window.navigator.userAgent.indexOf("Windows NT 6.2") != -1) OSName="Windows";
-    if (window.navigator.userAgent.indexOf("Windows NT 6.1") != -1) OSName="Windows";
-    if (window.navigator.userAgent.indexOf("Windows NT 6.0") != -1) OSName="Windows";
-    if (window.navigator.userAgent.indexOf("Windows NT 5.1") != -1) OSName="Windows";
-    if (window.navigator.userAgent.indexOf("Windows NT 5.0") != -1) OSName="Windows";
-    if (window.navigator.userAgent.indexOf("Mac")            != -1) OSName="MacOS";
-    if (window.navigator.userAgent.indexOf("X11")            != -1) OSName="UNIX";
-    if (window.navigator.userAgent.indexOf("Linux")          != -1) OSName="Linux";
-}
-
-function modifyDownloadInfo(text) {
-    const downloadInfoElement = document.querySelector('.download_info');
-    downloadInfoElement.textContent = text;
-}
-
-const LATEST_VERSION = "0.1.1";
+const LATEST_VERSION = "0.1.2";
 const DW_WINDOWS_AVAILABLE = true;
 const DW_LINUX_AVAILABLE = true;
+const DW_ANDROID_AVAILABLE = true;
 
-const DLSIZE_WINDOWS_TEMPLATES = 993;
-const DLSIZE_WINDOWS_NOTEMPLATES = 403;
+const DLSIZE_WINDOWS_TEMPLATES = 995;
+const DLSIZE_WINDOWS_NOTEMPLATES = 406;
 
 const DLSIZE_LINUX_TEMPLATES = 708;
 const DLSIZE_LINUX_NOTEMPLATES = 139;
 
+const DLSIZE_ANDROID_TEMPLATES = 648;
+
 var templates = true;
 var selectedVersion = LATEST_VERSION;
 
-function setDownload(templatesSize, nontemplatesSize) {
-    var downloadInfo = "Timeway "+selectedVersion;
-    if (templates) {
-        downloadInfo += "⠀⠀⠀⠀⠀⠀  Download size: "+templatesSize+"MB";
-    }
-    else {
-        downloadInfo += "⠀⠀⠀⠀⠀⠀  Download size: "+nontemplatesSize+"MB";
-        const sizeDifference = templatesSize-nontemplatesSize;
-        downloadInfo += " (-"+sizeDifference+"MB)";
-    }
-    modifyDownloadInfo(downloadInfo);
-}
-
-function setDownloadButtonVisible(visible) {
-    const downloadInfoElement = document.querySelector('.big_download_button');
-    downloadInfoElement.style.display = visible ? 'inline' : 'none';
-}
-
-var osSelected = 0;
 function selectWindows() {
-    osSelected = WINDOWS;
     if (DW_WINDOWS_AVAILABLE) {
-        setDownload(DLSIZE_WINDOWS_TEMPLATES, DLSIZE_WINDOWS_NOTEMPLATES);
-        setDownloadButtonVisible(true);
+        if (templates) {
+            window.location.href = 'https://github.com/TeoJT/timeway/releases/download/v0.1.2/timeway_windows_0_1_2.zip';
+            showThankYouScreen();
+        } else {
+            window.location.href = 'https://github.com/TeoJT/timeway/releases/download/v0.1.1/timeway_windows_0_1_2_notemplates.zip';
+            showThankYouScreen();
+        }
     }
     else {
-        modifyDownloadInfo("Windows version not available yet; please check again soon!");
-        setDownloadButtonVisible(false);
+        alert("Windows version not available yet; please check again soon!");
     }
 }
 
 function selectLinux() {
-    osSelected = LINUX;
     if (DW_LINUX_AVAILABLE) {
-        setDownload(DLSIZE_LINUX_TEMPLATES, DLSIZE_LINUX_NOTEMPLATES);
-        setDownloadButtonVisible(true);
+        if (templates) {
+            window.location.href = 'https://github.com/TeoJT/timeway/releases/download/v0.1.1/timeway_linux_0_1_1.tar.xz';
+            showThankYouScreen();
+        } else {
+            window.location.href = 'https://github.com/TeoJT/timeway/releases/download/v0.1.1/timeway_linux_0_1_1_notemplates.tar.xz';
+            showThankYouScreen();
+        }
     }
     else {
-        modifyDownloadInfo("Linux version not available yet; please check again soon!");
-        setDownloadButtonVisible(false);
+        alert("Linux version not available yet; please check again soon!");
     }
+}
 
+function selectAndroid() {
+    if (DW_ANDROID_AVAILABLE) {
+        window.location.href = 'https://github.com/TeoJT/timeway/releases/download/v0.1.2/timeway_android_0_1_2.apk';
+        showThankYouScreen();
+    }
+    else {
+        alert("Android version not available yet; please check again soon!");
+    }
 }
 
 function toggleTemplates(element) {
@@ -200,31 +147,35 @@ function toggleTemplates(element) {
         element.classList.remove("checkbox_timeway_selected");
         element.classList.add("checkbox_timeway");
     }
-
-    if (osSelected == WINDOWS) selectWindows();
-    else if (osSelected == LINUX) selectLinux();
+    setButtons();
 }
 
-function download() {
-    if (osSelected == WINDOWS) {
-        if (templates) {
-            window.location.href = 'https://github.com/TeoJT/timeway/releases/download/v0.1.1/timeway_windows_0_1_1.zip';
-        } else {
-            window.location.href = 'https://github.com/TeoJT/timeway/releases/download/v0.1.1/timeway_windows_0_1_1_notemplates.zip';
-        }
-    }
-    else if (osSelected == LINUX) {
-        if (templates) {
-            window.location.href = 'https://github.com/TeoJT/timeway/releases/download/v0.1.1/timeway_linux_0_1_1.tar.xz'
-        } else {
-            window.location.href = 'https://github.com/TeoJT/timeway/releases/download/v0.1.1/timeway_linux_0_1_1_notemplates.tar.xz';
-        }
+// function to modify the text of a button element
+function setButton(classname, text) {
+    var buttons = document.querySelectorAll("button."+classname);
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].innerHTML = text;
     }
 }
 
+function setButtons() {
+    setButton("os_windows", templates ? "Timeway 0.1.2 for Windows (995MB)" : "Timeway 0.1.2 for Windows (406MB)");
+    setButton("os_linux",   templates ? "Timeway 0.1.1 for Linux (708MB)"   : "Timeway 0.1.1 for Linux (139MB)");
+    setButton("os_android", "Timeway 0.1.2 for Android (648MB)");
+}
+
+function showThankYouScreen() {
+    // First, delete the download-pane div
+    var downloadPane = document.getElementById("download-pane");
+    downloadPane.parentNode.removeChild(downloadPane);
+    
+    // Then unhide "thankyou-screen"
+    var thankYouScreen = document.getElementById("thankyou-screen");
+    thankYouScreen.style.display = "block";
+}
 
 window.addEventListener('DOMContentLoaded', (event) => {
-    detectOSAndSelectButton();
+    setButtons();
 });
 
 </script>
@@ -234,26 +185,44 @@ window.addEventListener('DOMContentLoaded', (event) => {
         <h1>Download Timeway</h1>
     </div>
     <br>
-    <div style="text-align: center;">
-        <button class="btn_timeway os_select os_windows" onclick="selectButton(this); selectWindows();" name="platform" value="windows"> Windows </button>
-        <button class="btn_timeway os_select os_linux" onclick="selectButton(this); selectLinux();" name="platform" value="linux"> Linux </button>
-        <br>
-        <br>
+    <div style="text-align: center;" id="download-pane">
         <div style="display: flex; align-items: center; justify-content: center;">
             <button class="checkbox_timeway_selected" id="templatesCheckbox" onclick="toggleTemplates(this);">✔</button> <a style="margin-left: 5px;">Include templates</a>
         </div>
         <br>
-        <a style="font-size: 16px; color: gray">Templates are not necessary for Timeway to run, but if you don't include them, you won't be able to choose from 150 premade realms.</a>
         <br>
+        <img src="/images/windows.png" style="width:30px; vertical-align: middle">
+        <button class="btn_timeway os_select os_windows" onclick="selectWindows();" style="width:600px" name="platform" value="windows"> Windows </button>
+        <br>
+        <br>
+        <img src="/images/linux.png" style="width:30px; vertical-align: middle">
+        <button class="btn_timeway os_select os_linux" onclick="selectLinux();" style="width:600px" name="platform" value="linux"> Linux </button>
+        <br>
+        <br>
+        <img src="/images/android.png" style="width:30px; vertical-align: middle">
+        <button class="btn_timeway os_select os_android" onclick="selectAndroid();" style="width:600px" name="platform" value="android"> Android </button>
+        <br>
+        <br>
+        <br>
+        <a style="font-size: 16px; color: gray">Templates are not necessary for Timeway to run, but if you don't include them, you won't be able to choose from 150 premade realms.
+        <br>
+        <br>
+        Please note the Android version is very experimental. Once you download the app, you will need to enable special permissions to access all files.
+        </a>
+        <br>
+    </div>
+    <div id="thankyou-screen" style="display: none">
+        <h1 style="text-align: center;">Your download has started!</h1>
+        <p>Your download should be complete in a few minutes.
+        <br>
+        <br>
+        Once complete, extract the files from the zip folder and run "Timeway.exe" on Windows, or right-click and click "Run as application" for Linux.
+        <br>
+        <br>
+        If you're using Android, installation involves more steps due to the experimental nature of the Android port. Refer to <a href="https://github.com/TeoJT/timeway/releases/tag/v0.1.2">this section on the GitHub release page</a> for more information.
+        </p>
     </div>
     <br>
-    <div style="text-align: center;">
-        <h2 class="download_info"></h2>
-        <br>
-        <br>
-        <br>
-        <button class="btn_timeway big_download_button" onclick="download()" style="font-size: 42px; display: inline">Download</button>
-    </div>
     <br>
     <br>
     <br>
@@ -269,6 +238,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
         <h3>Previous releases</h3>
         <br>
         <table style="margin: 0 auto;">
+            <tr>
+                <td><h2>0.1.1 ⠀⠀⠀</h2></td>
+                <td><button class="btn_timeway" onclick="window.location.href='https://github.com/TeoJT/timeway/releases/download/v0.1.1/timeway_windows_0_1_1.zip'">Windows</button></td>
+                <td><button class="btn_timeway" onclick="window.location.href='https://github.com/TeoJT/timeway/releases/download/v0.1.1/timeway_linux_0_1_1.tar.xz'">Linux</button></td>
+            </tr>
             <tr>
                 <td><h2>0.1.0 ⠀⠀⠀</h2></td>
                 <td><button class="btn_timeway" onclick="window.location.href='https://github.com/TeoJT/timeway/releases/download/v0.1.0/timeway_windows_0_1_0.zip'">Windows</button></td>
