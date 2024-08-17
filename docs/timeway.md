@@ -113,10 +113,10 @@ function selectWindows() {
 function selectLinux() {
     if (DW_LINUX_AVAILABLE) {
         if (templates) {
-            window.location.href = 'https://github.com/TeoJT/timeway/releases/download/v0.1.1/timeway_linux_0_1_1.tar.xz';
+            window.location.href = 'https://github.com/TeoJT/timeway/releases/download/v0.1.2/timeway_linux_0_1_2.tar.xz';
             showThankYouScreen();
         } else {
-            window.location.href = 'https://github.com/TeoJT/timeway/releases/download/v0.1.1/timeway_linux_0_1_1_notemplates.tar.xz';
+            window.location.href = 'https://github.com/TeoJT/timeway/releases/download/v0.1.2/timeway_linux_0_1_2_notemplates.tar.xz';
             showThankYouScreen();
         }
     }
@@ -160,7 +160,7 @@ function setButton(classname, text) {
 
 function setButtons() {
     setButton("os_windows", templates ? "Timeway 0.1.2 for Windows (995MB)" : "Timeway 0.1.2 for Windows (406MB)");
-    setButton("os_linux",   templates ? "Timeway 0.1.1 for Linux (708MB)"   : "Timeway 0.1.1 for Linux (139MB)");
+    setButton("os_linux",   templates ? "Timeway 0.1.2 for Linux (708MB)"   : "Timeway 0.1.2 for Linux (139MB)");
     setButton("os_android", "Timeway 0.1.2 for Android (648MB)");
 }
 
