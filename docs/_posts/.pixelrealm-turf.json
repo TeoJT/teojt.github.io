@@ -72,6 +72,13 @@
       "z": -247.16189575195312
     },
     {
+      "filename": "2025-01-02-Learning-Vulkan-in-2024.md",
+      "x": 0,
+      "y": 0,
+      "scale": 1,
+      "z": 0
+    },
+    {
       "filename": "i found a bug in java.timewayentry",
       "rot": 4.71238899230957,
       "x": 2186.277587890625,
@@ -133,6 +140,14 @@
       "y": 0,
       "scale": 1,
       "z": -250.19345092773438
+    },
+    {
+      "filename": "Sketchio; my new project.timewayentry",
+      "rot": 6.359389781951904,
+      "x": 52.647796630859375,
+      "y": 0,
+      "scale": 1,
+      "z": 320.0141296386719
     }
   ],
   "coins": false,
