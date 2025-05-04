@@ -26,7 +26,7 @@ title: Timeway
 
 
 
-<div style="position: absolute; top: 800px; left: 2.5%; width: 95%">
+<div style="position: absolute; top: 1000px; left: 2.5%; width: 95%">
 <hr>
 <h3>Timeway is a whimsical, dream-like explorer application that transforms your computer files into a universe.</h3>
 
@@ -45,7 +45,7 @@ title: Timeway
         <h3>Customise realms, manage files, and shape your universe.</h3>
         <p>Pick up files and portals and move between realms- this moves your actual files on your computer. 
         <br>Customise realms with custom skies, grass, trees, and background music. You can even customise the terrain with the terraformer tool.</p>
-        <p>Not in the mood to create assets? No problem. Timeway provides over 150 beautiful realm templates to choose from- simply create a new folder portal and select from one of the many templates available.</p>
+        <p>Not in the mood to create assets? No problem. Timeway provides over 200 beautiful realm templates to choose from- simply create a new folder portal and select from one of the many templates available.</p>
     </div>
 </div>
 
@@ -79,29 +79,29 @@ title: Timeway
 
 <script>
 
-const LATEST_VERSION = "0.1.2";
 const DW_WINDOWS_AVAILABLE = true;
-const DW_LINUX_AVAILABLE = true;
-const DW_ANDROID_AVAILABLE = true;
+const DW_LINUX_AVAILABLE = false;
+const DW_ANDROID_AVAILABLE = false;
 
-const DLSIZE_WINDOWS_TEMPLATES = 995;
-const DLSIZE_WINDOWS_NOTEMPLATES = 406;
+const LATEST_VERSION_WINDOWS = "0.1.5";
+const DLSIZE_WINDOWS_TEMPLATES = 716;
+const DLSIZE_WINDOWS_NOTEMPLATES = 296;
 
+const LATEST_VERSION_LINUX = "0.1.2";
 const DLSIZE_LINUX_TEMPLATES = 708;
 const DLSIZE_LINUX_NOTEMPLATES = 139;
 
 const DLSIZE_ANDROID_TEMPLATES = 648;
 
 var templates = true;
-var selectedVersion = LATEST_VERSION;
 
 function selectWindows() {
     if (DW_WINDOWS_AVAILABLE) {
         if (templates) {
-            window.location.href = 'https://github.com/TeoJT/timeway/releases/download/v0.1.2/timeway_windows_0_1_2.zip';
+            window.location.href = 'https://github.com/TeoJT/Timeway/releases/download/v0.1.5/timeway_windows_0_1_5.zip';
             showThankYouScreen();
         } else {
-            window.location.href = 'https://github.com/TeoJT/timeway/releases/download/v0.1.2/timeway_windows_0_1_2_notemplates.zip';
+            window.location.href = 'https://github.com/TeoJT/Timeway/releases/download/v0.1.5/timeway_windows_0_1_5_notemplates.zip';
             showThankYouScreen();
         }
     }
@@ -159,8 +159,8 @@ function setButton(classname, text) {
 }
 
 function setButtons() {
-    setButton("os_windows", templates ? "Timeway 0.1.2 for Windows (995MB)" : "Timeway 0.1.2 for Windows (406MB)");
-    setButton("os_linux",   templates ? "Timeway 0.1.2 for Linux (708MB)"   : "Timeway 0.1.2 for Linux (139MB)");
+    setButton("os_windows", templates ? "Timeway "+LATEST_VERSION_WINDOWS+" for Windows ("+DLSIZE_WINDOWS_TEMPLATES+"MB)" : "Timeway "+LATEST_VERSION_WINDOWS+" for Windows ("+DLSIZE_WINDOWS_NOTEMPLATES+"MB)");
+    setButton("os_linux",   templates ? "Timeway "+LATEST_VERSION_LINUX+" for Linux ("+DLSIZE_LINUX_TEMPLATES+"MB)"   : "Timeway "+LATEST_VERSION_LINUX+" for Linux ("+DLSIZE_LINUX_NOTEMPLATES+"MB)");
     setButton("os_android", "Timeway 0.1.2 for Android (648MB)");
 }
 
@@ -204,7 +204,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         <br>
         <br>
         <br>
-        <a style="font-size: 16px; color: gray">Templates are not necessary for Timeway to run, but if you don't include them, you won't be able to choose from 150 premade realms.
+        <a style="font-size: 16px; color: gray">Templates are not necessary for Timeway to run, but if you don't include them, you won't be able to choose from 200 premade realms.
         <br>
         <br>
         Please note the Android version is very experimental. Once you download the app, you will need to enable special permissions to access all files.
@@ -216,7 +216,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         <p>Your download should be complete in a few minutes.
         <br>
         <br>
-        Once complete, extract the files from the zip folder and run "Timeway.exe" on Windows, or right-click and click "Run as application" for Linux.
+        Once complete, extract the files from the zip folder and run "Timeway.exe" on Windows, or right-click and click "Run as application" on Linux.
         <br>
         <br>
         If you're using Android, installation involves more steps due to the experimental nature of the Android port. Refer to <a href="https://github.com/TeoJT/timeway/releases/tag/v0.1.2">this section on the GitHub release page</a> for more information.
@@ -238,6 +238,21 @@ window.addEventListener('DOMContentLoaded', (event) => {
         <h3>Previous releases</h3>
         <br>
         <table style="margin: 0 auto;">
+            <tr>
+                <td><h2>0.1.4 ⠀⠀⠀</h2></td>
+                <td><button class="btn_timeway" onclick="window.location.href='https://github.com/TeoJT/Timeway/releases/download/v0.1.4/timeway_windows_0_1_4.zip'">Windows</button></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><h2>0.1.3 ⠀⠀⠀</h2></td>
+                <td><button class="btn_timeway" onclick="window.location.href='https://github.com/TeoJT/Timeway/releases/download/v0.1.3/timeway_windows_0_1_3.zip'">Windows</button></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><h2>0.1.2 ⠀⠀⠀</h2></td>
+                <td><button class="btn_timeway" onclick="window.location.href='https://github.com/TeoJT/Timeway/releases/download/v0.1.2/timeway_windows_0_1_2.zip'">Windows</button></td>
+                <td><button class="btn_timeway" onclick="window.location.href='https://github.com/TeoJT/Timeway/releases/download/v0.1.2/timeway_linux_0_1_2.tar.xz'">Linux</button></td>
+            </tr>
             <tr>
                 <td><h2>0.1.1 ⠀⠀⠀</h2></td>
                 <td><button class="btn_timeway" onclick="window.location.href='https://github.com/TeoJT/timeway/releases/download/v0.1.1/timeway_windows_0_1_1.zip'">Windows</button></td>
