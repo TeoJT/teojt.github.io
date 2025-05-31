@@ -86,6 +86,13 @@
       "z": 0
     },
     {
+      "filename": "2025-05-04-Timeway--loads-of-updates.md",
+      "x": 592.6101684570312,
+      "y": 0,
+      "scale": 1,
+      "z": 39.782257080078125
+    },
+    {
       "filename": "i found a bug in java.timewayentry",
       "rot": 4.71238899230957,
       "x": 2186.277587890625,
@@ -126,12 +133,28 @@
       "z": 320.0141296386719
     },
     {
+      "filename": "Timeway- loads of updates.timewayentry",
+      "rot": -2.364546775817871,
+      "x": 805.5864868164062,
+      "y": 0,
+      "scale": 1,
+      "z": -49.437835693359375
+    },
+    {
       "filename": "Timeway- New portals.timewayentry",
       "rot": 4.71238899230957,
       "x": 1280.44873046875,
       "y": 0,
       "scale": 1,
       "z": -1934.3267822265625
+    },
+    {
+      "filename": "Timeway- Optimisation update.timewayentry",
+      "rot": 17.236778259277344,
+      "x": 670.6034545898438,
+      "y": 0,
+      "scale": 1,
+      "z": -1888.88525390625
     },
     {
       "filename": "timeway_website.timewayentry",
