@@ -1,0 +1,29 @@
+Timeway 0.1.6 benchmarks
+
+Before:
+8503us
+8814us
+8613us
+8703us
+
+Single-textured objects: 
+5459us
+5466us
+5490us
+5470us
+
+GLQuadElements:
+4889us
+5028us
+4675us
+4841us
+4889us
+
+Culling:
+2858us
+2917us
+2897us
+2923us
+
+66.4% performance improvement
+

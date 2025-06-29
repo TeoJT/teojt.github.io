@@ -93,6 +93,13 @@
       "z": 39.782257080078125
     },
     {
+      "filename": "2025-05-31-Timeway--Optimisation-update.md",
+      "x": 1007.5805053710938,
+      "y": 0,
+      "scale": 1,
+      "z": 186.55184936523438
+    },
+    {
       "filename": "i found a bug in java.timewayentry",
       "rot": 4.71238899230957,
       "x": 2186.277587890625,
@@ -131,6 +138,13 @@
       "y": 0,
       "scale": 1,
       "z": 320.0141296386719
+    },
+    {
+      "filename": "Timeway 0.1.6 benchmarks.txt",
+      "x": 1373.9227294921875,
+      "y": 0,
+      "scale": 1,
+      "z": 195.22085571289062
     },
     {
       "filename": "Timeway- loads of updates.timewayentry",
