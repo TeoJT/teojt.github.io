@@ -83,9 +83,9 @@ const DW_WINDOWS_AVAILABLE = true;
 const DW_LINUX_AVAILABLE = false;
 const DW_ANDROID_AVAILABLE = false;
 
-const LATEST_VERSION_WINDOWS = "0.1.6";
-const DLSIZE_WINDOWS_TEMPLATES = 716;
-const DLSIZE_WINDOWS_NOTEMPLATES = 296;
+const LATEST_VERSION_WINDOWS = "0.1.7";
+const DLSIZE_WINDOWS_TEMPLATES = 731;
+const DLSIZE_WINDOWS_NOTEMPLATES = 311;
 
 const LATEST_VERSION_LINUX = "0.1.2";
 const DLSIZE_LINUX_TEMPLATES = 708;
@@ -98,10 +98,10 @@ var templates = true;
 function selectWindows() {
     if (DW_WINDOWS_AVAILABLE) {
         if (templates) {
-            window.location.href = 'https://github.com/TeoJT/Timeway/releases/download/v0.1.6/timeway_windows_0_1_6.zip';
+            window.location.href = 'https://github.com/TeoJT/Timeway/releases/download/v0.1.7/timeway_windows_0_1_7.zip';
             showThankYouScreen();
         } else {
-            window.location.href = 'https://github.com/TeoJT/Timeway/releases/download/v0.1.6/timeway_windows_0_1_6_notemplates.zip';
+            window.location.href = 'https://github.com/TeoJT/Timeway/releases/download/v0.1.7/timeway_windows_0_1_7_notemplates.zip';
             showThankYouScreen();
         }
     }
@@ -238,6 +238,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
         <h3>Previous releases</h3>
         <br>
         <table style="margin: 0 auto;">
+            <tr>
+                <td><h2>0.1.6 ⠀⠀⠀</h2></td>
+                <td><button class="btn_timeway" onclick="window.location.href='https://github.com/TeoJT/Timeway/releases/download/v0.1.6/timeway_windows_0_1_6.zip'">Windows</button></td>
+                <td></td>
+            </tr>
             <tr>
                 <td><h2>0.1.5 ⠀⠀⠀</h2></td>
                 <td><button class="btn_timeway" onclick="window.location.href='https://github.com/TeoJT/Timeway/releases/download/v0.1.5/timeway_windows_0_1_5.zip'">Windows</button></td>
