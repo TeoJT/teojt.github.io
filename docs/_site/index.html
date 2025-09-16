@@ -20,7 +20,7 @@
 		<link rel="stylesheet" href="styles/new_styles.css">
 		<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@700&display=swap" rel="stylesheet">
 		<link rel="icon" href="/assets/legacy/starbit.png">
-		<script src="assets/third_party_scripts/p5.js" defer></script>
+    	<script src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js"></script>
 	</head>
 
 	<style>
@@ -30,31 +30,113 @@
             width: 100%;
             height: 100%;
 			display: flex;
+			opacity: 70%;
             background: lightblue; /* Just to visualize the canvas */
-        }
+        } 
+
+		div.project {
+			cursor: pointer;
+			width: 33.33333%;
+			height: 100%;
+			opacity: 30%;
+    		transition: all 0.5s ease-in-out;
+			/* background-color: rgba(0, 0, 0, 0.505); */
+		}
+		div.project:hover {
+			opacity: 100%;
+    		transition: all 0.5s ease-in-out;
+		}
+		div.centerimg {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.projects-container {
+			top: 20%;
+			height: 40%;
+			display: flex;
+			justify-content: center; /* Optional: centers the logos horizontally */
+			gap: 20px; /* Optional: adds spacing between logos */
+		}
+		div.project img {
+			display: flex;
+			width: 100%
+		} 
+		.my_title {
+			height: 20%;
+			background-color: rgba(0, 0, 0, 0.445);
+		}
+
 	</style>
 
-	<body>
+	<body style="background-color: black;">
 
 		<main></main>
-		<!-- <script src="assets/sketches/thumbnails.js" defer></script> -->
-
-
-		<div class="title_container">
-			<h1 class="cool_title">Téo Taylor</h1>
+		<div>
+			<script src="/assets/p5_sketches/thumbnails.js"></script>
+			<!-- <script src="assets/sketches/thumbnails.js" defer></script> -->
 		</div>
 
-        <div class="scribble_container">
+
+
+		<div class="my_title">
+			<h1 class="cool_title">Téo Taylor</h1>
+			<a style="padding-left: 55px;" class="fade_in">Welcome to my website! Check out my portfolio below:</a>
+		</div>
+		<div class="projects-container fade_in">
+			<div class="project centerimg" onclick="window.location.href='./timeway.html';" onmouseover="changeMode(1)">
+				<div>
+					<img src="/images/timeway_logo.png" class="centered">
+					<a>A whimsical, dream-like explorer application that transforms your computer files into a universe.</a>
+				</div>
+			</div>
+			<div class="project centerimg">
+				<div>
+					<img src="/images/sketchio_logo.png" onclick="window.location.href='https://github.com/TeoJT/Sketchio';" class="centered" onmouseover="changeMode(2)">
+					<a>A powerful animation program for programmers and artists.</a>
+				</div>
+			</div>
+			<div class="project centerimg">
+				<div>
+					<img src="/images/processing_ANGLE_logo.png" onclick="window.location.href='https://github.com/TeoJT/processing4-ANGLE/tree/ANGLE';" class="centered" onmouseover="changeMode(3)">
+					<a>Integrating Google ANGLE to future-proof Processing's rendering backend.</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="projects-container fade_in">
+			<div class="project centerimg" onclick="window.location.href='./blog.html';">
+				<div>
+					<img src="/images/blog_logo.png" class="centered" onmouseover="changeMode(4)">
+					<a>My personal blog.</a>
+				</div>
+			</div>
+			<div class="project centerimg">
+				<div>
+					<img src="/images/processing_vulkan_logo.png" onclick="window.location.href='./papers/teo-taylor-dissertation.pdf';" class="centered" onmouseover="changeMode(5)">
+					<a>My final year dissertation in which I benchmark Vulkan in Processing.</a>
+				</div>
+			</div>
+			<div class="project centerimg">
+				<div>
+					<img src="/images/other_projects.png" class="centered" onclick="window.location.href='./otherprojects.html'" onmouseover="changeMode(6)">
+					<a>Older and smaller projects.</a>
+				</div>
+			</div>
+		</div>
+		
+
+        <!-- <div class="scribble_container">
             <img src="/assets/graphics/scribble.webp" style="position: absolute; width: 12%; top: 2%; left: 65%">
             <img src="/assets/graphics/scribble.webp" style="position: absolute; width: 7%; top: 4%; left: 20%">
             <img src="/assets/graphics/scribble.webp" style="position: absolute; width: 14%; top: 12%; left: 80%">
             <img src="/assets/graphics/scribble.webp" style="position: absolute; width: 5%; top: 40%; left: 2%">
-        </div>
+        </div> -->
+
+
 
 		<!-- Have a little spacing between the title -->
-		<div class="content" style="padding-top: 100px;">
-			<!-- <p><a style="color:red">Please note this website is under construction!</a><br> -->
-			   <!-- Select a page to visit below :)</p> -->
+		<!-- <div class="content" style="padding-top: 100px;">
 			<div id="thumbnails">
 				<a href="./blog.html">Blog</a>
 				<a href="./about.html">About</a>
@@ -62,7 +144,7 @@
 				<a href="./papers/teo-taylor-dissertation.pdf">Dissertation</a>
 			</div>
 
-		</div>
+		</div> -->
 
 
 

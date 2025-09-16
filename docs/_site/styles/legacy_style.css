@@ -100,6 +100,7 @@ a.lister {
 
 
 button {
+	cursor: pointer;
     display: inline-block;
     -webkit-box-sizing: content-box;
     -moz-box-sizing: content-box;
