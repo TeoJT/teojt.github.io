@@ -103,7 +103,7 @@ a {
 a[href] {
     color:rgb(202, 193, 255);
     background-color:rgba(0, 0, 0, 0.356);
-    font-size:25px
+    font-size:20px
 }
 
 img.center {
@@ -116,6 +116,10 @@ img.center {
     float: right;
     margin: 0px 0px 15px 15px;
     
+}
+
+footer>a[href] {
+    font-size:30px;
 }
 
 button.btn_timeway {

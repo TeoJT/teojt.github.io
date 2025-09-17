@@ -4,7 +4,7 @@
 // let mockScene;
 let pg;
 
-const TOTAL_REALMS = 2;
+const TOTAL_REALMS = 43;
 
 let nextRealmID = 0;
 let skyCount;
@@ -44,21 +44,9 @@ let portalZ = timeway_playerZ+4000;
 const PATH = "/assets/p5_sketches/";
 // const PATH = "";
 
-const realm_sky_count = 
-    [
-      1,
-      2,
-      1,
-      4
-    ];
+let realm_sky_count = [];
 
-const realm_tree_count = 
-    [
-      1,
-      3,
-      1,
-      1
-    ];
+let realm_tree_count = [];
 
 let shader_vert_fog = `
 precision highp float;
@@ -222,13 +210,20 @@ void main(void)
 
 let portalPlusShader, standardShader, standardSeeThruShader;
 
+let timewayMetaFiles = [];
+
 function preloadTimeway() {
   img_sky_default[0] = loadImage(PATH+"img/pixelrealm-sky-legacy.png");
   img_grass_default = loadImage(PATH+"img/pixelrealm-grass-legacy.png");
   img_tree_default[0] = loadImage(PATH+"img/pixelrealm-terrain_object-legacy.png");
   img_white = loadImage(PATH+"img/white.png");
   
+  for (let i = 0; i < TOTAL_REALMS; i++) {
+    const dir = PATH+"img/realmtemplates/"+nf(i+1, 3, 0);
+    timewayMetaFiles[i+1] = loadStrings(dir+"/meta.txt");
+  }
   
+
   
 }
 
@@ -265,10 +260,12 @@ function dummyLoadSuccess() {
 }
 
 function prepareLoadNext(id) {
-  const dir = PATH+"img/"+nf(id+1, 3, 0);
+  const dir = PATH+"img/realmtemplates/"+nf(id+1, 3, 0);
   
   // TODO: Successful callback
-  skyCountNext = realm_sky_count[id];
+
+  // console.log(id+1, timewayMetaFiles[id+1]);
+  skyCountNext = int(timewayMetaFiles[id+1][0]);
   if (skyCountNext == 1) {
     img_sky_next[0] = loadImage(dir+"/pixelrealm-sky.png", dummyLoadSuccess, treeLoadFailCallback);
     // print(dir+"/pixelrealm-sky.png");
@@ -280,7 +277,8 @@ function prepareLoadNext(id) {
     }
   }
   
-  treeCountNext = realm_tree_count[id];
+  // console.log(id+1, timewayMetaFiles[id+1]);
+  treeCountNext = int(timewayMetaFiles[id+1][1]);
   for (let i = 0; i < treeCountNext; i++) {
     img_tree_next[i] = loadImage(dir+"/pixelrealm-terrain_object-"+str(i+1)+".png", dummyLoadSuccess, treeLoadFailCallback);
     // print(dir+"/pixelrealm-terrain_object-"+str(i+1)+".png")
@@ -484,10 +482,15 @@ function renderPixelRealmMockup(playerX, playerY, playerZ, clearway=true, grass=
   
 }
 
+// let threeMostRecent = [];
 
 function nextRealm() {
   loadNext();
-  prepareLoadNext(int(random(0, TOTAL_REALMS)));
+
+  let chooseNext = int(random(0, TOTAL_REALMS));
+
+  prepareLoadNext(chooseNext);
+  // prepareLoadNext(nextRealmID++);
   // if (nextRealmID >= TOTAL_REALMS) {
   //   nextRealmID = 0;
   // }
@@ -503,6 +506,7 @@ function calculateFade(dist, fadeDist) {
 
 
 function drawTree(tree, x, z, sc, img) {
+      if (treeCount == 0) return;
       if (tree[img].width == 1 && tree[img].height == 1) return;
       shader(standardShader);
       fill(255);
@@ -1104,6 +1108,7 @@ function sketchio() {
   text(sketchioCode, WIDTH/2+4, 100+10-textScrollY, WIDTH/2-20, 9999);
   
   textScrollY += 2;
+  textScrollY += -mouseVelY/50;
   // Manual text size (getTextSize doesnt seem to work)
   if (textScrollY > getTextHeight(sketchioCode)-150) {
     textScrollY = -HEIGHT+150;
@@ -1615,7 +1620,7 @@ function preloadTimewayBlog() {
 }
 
 function setupTimewayBlog() {
-  let dir = PATH+"img/010/";
+  let dir = PATH+"img/realmtemplates/010/";
   blog_sky[0] = loadImage(dir+"pixelrealm-sky.png");
   blog_grass = loadImage(dir+"pixelrealm-grass.png");
   blog_tree[0] = loadImage(dir+"pixelrealm-terrain_object-1.png");
@@ -1917,9 +1922,9 @@ function changeMode(newmode)
   if (changeToMode == newmode) {
     return;
   }
-  if (millis() < 500) {
-    return;
-  }
+  // if (millis() < 500) {
+  //   return;
+  // }
   modeChangeFade = 1;
   if (mode == 0) modeChangeFade = 29;
   changeToMode = newmode;
