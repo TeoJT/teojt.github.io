@@ -7,9 +7,9 @@
 }
 
 @keyframes appear_down {
-    0% { top: -10%; opacity: 0; }
+    0% { top: -100px; opacity: 0; }
     20% { opacity: 0; }
-    100% { opacity: 1;}
+    100% { top: 0px; opacity: 1;}
 }
 
 @keyframes just_fade {
@@ -81,7 +81,7 @@ h1.cool_title {
     animation-timing-function: ease-out;
     animation-name: appear_down;
     animation-duration: 1.5s;
-    top: 10%
+    top: 0px;
 }
 
 .fade_in {

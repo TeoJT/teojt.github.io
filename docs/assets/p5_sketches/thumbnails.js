@@ -1124,7 +1124,7 @@ function sketchio() {
   // translate(-40, 15, 0);
   
   fill(255);
-  textSize(18)
+  textSize(18);
   
   text("Compile", 700.0, 79.0);
   image(img_media_128, 664.0, 2.0, 72.0, 72.0);
@@ -1911,9 +1911,13 @@ function otherProjects() {
 let mode = 0;
 let changeToMode = -1;
 let modeChangeFade = 0;
+let allowClickToFade = true;
 
 function mousePressed() {
-  changeMode(0);
+  if (allowClickToFade) {
+    changeMode(0);
+
+  }
   // changeMode((mode+1)%7);
 }
 
@@ -1931,6 +1935,13 @@ function changeMode(newmode)
   // if (changeToMode > 2) {
   //   changeToMode = 1;
   // }
+}
+
+function setMode(newmode, clickToChange=true) {
+  mode = newmode;
+  changeToMode = newmode;
+  modeChangeFade = 0;
+  allowClickToFade = clickToChange;
 }
 
 
