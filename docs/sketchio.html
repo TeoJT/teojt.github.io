@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!--
+	Taken from another old project, this is the basis of
+	the legacy css file that I'm re-using for this project.
+-->
+
+
+<html>
+	<head>
+		<title>Timeway</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="/styles/new_styles.css">
+		<meta name="description" content="Your computer is your universe. Timeway is a whimsical, dream-like explorer application that transforms your computer files into a universe. Download Timeway here now.">
+		<meta property="og:title" content="Téo Taylor- Timeway" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://teojt.github.io/Timeway.html" />
+		<meta property="og:image" content="/images/twicon-4.png" />
+		<meta property="og:description" content="Coding, nerding about GPU's, and Timeway. Download Timeway here." />
+		<meta name="theme-color" content="#747185">
+		<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@700&display=swap" rel="stylesheet">
+		<link rel="icon" href="{{ 'legacy/starbit.png' | relative_url }}">
+    	<script src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js"></script>
+	</head>
+
+    <style>
+		canvas {
+            position: absolute;
+            z-index: -1; /* Canvas is in the background */
+            width: 100%;
+            height: 100%;
+			display: flex;
+			/* opacity: 100%; */
+        } 
+
+        body {
+            background-color: #0F0F0E;
+            margin: 0px;
+            font-family: "Courier New", Courier, monospace;
+        }
+        div.textelement {
+            white-space: nowrap;
+        }
+        p {
+            font-family: 'Courier Prime', monospace;
+            font-size:22px
+        }
+    </style>
+
+<body style="background-color: rgb(255, 255, 255);">
+    
+<main style="position: fixed; top: 0%"></main>
+<div>
+    <script src="/assets/p5_sketches/thumbnails.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', function() {
+setMode(2, false);
+}, false);</script>
+</div>
+		
+<div style="position: relative; z-index: 1; background-color: rgba(0, 0, 0, 0.676); width: 70%; display: block; margin: 12%; padding: 3%; margin-top: 30px;">
+<a href="index.html">Home</a>
+
+<!-- <img class="twicon" src="/images/twicon-1.png" alt="Twicon 1" style="position: relative; top: 200px; left: 0%; animation-delay: 1.28934s;">
+<img class="twicon" src="/images/twicon-2.png" alt="Twicon 2" style="position: relative; top: 6.6%; left: 75%; animation-delay: 0.2894s;">
+<img class="twicon" src="/images/twicon-3.png" alt="Twicon 3" style="position: relative; top: 423px; left: 13%; animation-delay: 0s;">
+<img class="twicon" src="/images/twicon-4.png" alt="Twicon 4" style="position: relative; top: 500px; left: 89%; animation-delay: 0.69823s;"> -->
+
+
+
+
+<div class="timeway_cool_title" style="width: 100%; position: relative;"><img style="display: block; text-align: center; width: 50%; margin-left: auto; margin-right: auto;" src="/images/sketchio_logo.png" /></div>
+
+<!-- <br>
+<br>
+<br>
+<div style="text-align: center;">
+    <button class="btn_timeway" style="font-size: 52px; width: 85%;" onclick="window.location.href='#download'">Download</button>
+</div> -->
+
+
+<!-- <div style="position: absolute; top: 1000px; left: 2.5%; width: 95%"> -->
+<hr>
+<h3>Welcome to Sketchio, a work-in-progress, yet-to-be-released animation program where you can create animations with code.</h3>
+
+<img src="/images/sketchio_ex_1.png" style="width: 80%; margin: 0 auto; display: block;">
+
+<hr>
+<br>
+<br>
+<p>Sketchio is the successor to my older project called <a href="https://github.com/TeoJT/sketchiepad">Sketchiepad</a>, which did a lot of heavy-lifting in animated Processing sketches such as loading images, caching large files, music playback, and moving objects. However, there was a lack of UI, missing features, and no real direction for the codebase. It was more of a library than an animation program. 
+    
+<br>
+
+<p>Sketchio solves all this. It is a proper stand-alone application which loads animation scripts during runtime, and has many neat features to make animating faster. It can compile scripts during runtime, seek to any point in the animation using the time bar, render complete MP4 files, and provides many UIs which replaces Sketchiepad's code-based config files.</p>
+
+<br>
+
+<p>Under the hood, it uses the same custom engine which powers <a href="/timeway.html">Timeway</a>, as it is orientated towards file-management and media, perfect for Sketchio. All of that runs on top of the <a href="https://processing.org/">Processing</a> framework, where its API is exposed alongside Sketchio's own API in projects.</p>
+
+<!-- <p style="font-size: 12px;">Fun fact, the Timeway engine inherits some code from Sketchio (particularly the console and the sprite system), and Sketchio uses the Timeway engine, so Sketchio</p> -->
+
+<br>
+
+<p>Sketchio is still very much work-in-progress and not ready for download yet, but if you're still interested, you can explore the <a href="https://github.com/TeoJT/sketchiepad">Github repository</a> or check out this <a href="/2025/01/21/Sketchio;-my-new-project.html">blog post</a> which talks about Sketchio in more detail.</p>
+
+<hr>
+<br>
+
+<br>
+<br>
+<br>
+
+
+
+<br>
+<br>
+<br>
+
+
+<div style="text-align: center;">
+    <br>
+    <br>
+    <br>
+    <a style="font-size: 16px; color: gray">Sketchio by Téo Taylor</a>
+    <br>
+    <a href="index.html">Go to home page</a>
+</div>
+
+
+
+<br>
+<br>
+<br>
+</div>
+
+        
+
+	</body>
+
+    <footer>
+        <a href="javascript:history.back()">Back</a>
+    </footer>
+</html>
+
+
+

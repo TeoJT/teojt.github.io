@@ -231,6 +231,8 @@ let canvas;
 
 function setupTimeway() {
   // pg = createGraphics(width, height, WEBGL);
+  
+  noiseSeed(92683);
     
   canvas.getTexture(img_sky_default[0]).setInterpolation(NEAREST, NEAREST);
   canvas.getTexture(img_grass_default).setInterpolation(NEAREST, NEAREST);
@@ -455,30 +457,32 @@ function renderPixelRealmMockup(playerX, playerY, playerZ, clearway=true, grass=
   
       pop();
   
-      const PORTAL_LIGHT_RANGE = 600;
-      
-      if (portalZ-playerZ < PORTAL_LIGHT_RANGE) {
-        portalLight = (1-((portalZ-playerZ)/PORTAL_LIGHT_RANGE))*255;
+      if (!stillMode) {
+        const PORTAL_LIGHT_RANGE = 600;
         
-        // Walk through portal
-        if (portalZ-playerZ < 0) {
-          nextRealm();
+        if (portalZ-playerZ < PORTAL_LIGHT_RANGE) {
+          portalLight = (1-((portalZ-playerZ)/PORTAL_LIGHT_RANGE))*255;
+          
+          // Walk through portal
+          if (portalZ-playerZ < 0) {
+            nextRealm();
+          }
+        }
+        else {
+          portalLight -= 5*delta;
+        }
+    
+        if (portalLight > 0) {
+          resetShader();
+          clearDepth();
+          blendMode(ADD);
+          fill( portalLight );
+          noStroke();
+          rect(-width/2, -height/2, width, height);
+          blendMode(BLEND);
         }
       }
-      else {
-        portalLight -= 5;
-      }
-  
-      if (portalLight > 0) {
-        resetShader();
-        clearDepth();
-        blendMode(ADD);
-        fill( portalLight );
-        noStroke();
-        rect(-width/2, -height/2, width, height);
-        blendMode(BLEND);
-      }
-  
+    
   
 }
 
@@ -555,7 +559,7 @@ function renderObjects(playerX, playerY, playerZ, clearway, tree, localTreeCount
       let treeLikelyhood = 0.4;
       let randomOffset = 200;
       let CLEARWAY = 80;
-      if (!clearway) CLEARWAY = 0;
+      if (!clearway || stillMode) CLEARWAY = 0;
   
       for (let tilez = chunkz+renderDistance; tilez > chunkz-renderDistance; tilez -= 1) {
         for (let tilex = chunkx-renderDistance-1; tilex < chunkx+renderDistance; tilex += 1) {
@@ -588,7 +592,17 @@ function timeway() {
   pop();
   // image(mockScene, 0, 0, width, height);
   processMouse();
-  timeway_playerZ += 15+mouseVel()*0.02;
+
+  if (!stillMode) {
+      timeway_playerZ += 15*delta + mouseVel()*0.02*delta;
+  }
+  // else {
+  //     timeway_playerX = mouseX*2-2000;
+  //     timeway_playerZ = mouseY*2-500;
+  //     if (mousePressed) {
+  //       console.log(timeway_playerX, timeway_playerZ);
+  //     }
+  // }
   
 }
 
@@ -599,19 +613,19 @@ let mouseVelY = 0;
 
 function processMouse(useAbs=true, sped=0.98) {
   if (useAbs) {
-  mouseVelX += abs(mouseX-prevMouseX);
-  mouseVelY += abs(mouseY-prevMouseY);
+    mouseVelX += abs(mouseX-prevMouseX);
+    mouseVelY += abs(mouseY-prevMouseY);
   }
   else {
-  mouseVelX += (mouseX-prevMouseX);
-  mouseVelY += (mouseY-prevMouseY);
+    mouseVelX += (mouseX-prevMouseX);
+    mouseVelY += (mouseY-prevMouseY);
   }
   
   mouseVelX = min(mouseVelX, 1000);
   mouseVelY = min(mouseVelY, 1000);
   
-  mouseVelX *= sped;
-  mouseVelY *= sped;
+  mouseVelX *= pow(sped,delta);
+  mouseVelY *= pow(sped,delta);
   
   prevMouseX = mouseX;
   prevMouseY = mouseY;
@@ -1066,10 +1080,10 @@ function countNewlines(t) {
 
 function sketchio() {
   if (mouseVelX >= -50) {
-    playhead += 16.6/1000;
+    playhead += (16.6/1000)*delta;
   }
   processMouse(false, 0.9);
-  playhead += mouseVelX/5000;
+  playhead += ((mouseVelX*delta)/5000);
   playhead = max(playhead, 0);
   if (playhead > SKETCHIO_LENGTH) {
     playhead = 0;
@@ -1107,8 +1121,8 @@ function sketchio() {
   textSize(20);
   text(sketchioCode, WIDTH/2+4, 100+10-textScrollY, WIDTH/2-20, 9999);
   
-  textScrollY += 2;
-  textScrollY += -mouseVelY/50;
+  textScrollY += 2*delta;
+  textScrollY += (-mouseVelY/50)*delta;
   // Manual text size (getTextSize doesnt seem to work)
   if (textScrollY > getTextHeight(sketchioCode)-150) {
     textScrollY = -HEIGHT+150;
@@ -1413,8 +1427,8 @@ function processingANGLE() {
   const SLIDING_WINDOW_LENGTH = 100;
   
   processMouse(true, 0.95);
-  codeMicroStep += 10;
-  codeMicroStep += mouseVel()*0.05;
+  codeMicroStep += 10*delta;
+  codeMicroStep += mouseVel()*0.05*delta;
   
   if (codeMicroStep < 0) {
     slidingTextWindow--;
@@ -1452,6 +1466,7 @@ function processingANGLE() {
 
 
 
+
 function processingANGLEWindow(x, y, title, frame) {
   
   push();
@@ -1466,7 +1481,7 @@ function processingANGLEWindow(x, y, title, frame) {
   x *= scl;
   y *= scl;
   
-  y += sin(frameCount*0.02+y*0.28457)*7;
+  y += sin(totalTime*0.02+y*0.28457)*7;
   
   image(frame, -width/2+x, -height/2+y, wi, hi);
   rect(-width/2+x, -height/2+y, wi, hi);
@@ -1493,7 +1508,7 @@ function depthSort() {
   // translate(-depthSortFramebuffer.width/2, -depthSortFramebuffer.height/2, -300);
   scale(0.5);
     
-  let rot = frameCount*2;
+  let rot = totalTime*2;
 
   rotateZ(radians(90));
   rotateX(radians(rot/60.0 * 10));
@@ -1541,13 +1556,13 @@ function planets() {
   translate(planetsFramebuffer.width/2, planetsFramebuffer.height/2-150, -300);  
   
   push();
-  rotateY(PI * frameCount / 500);
+  rotateY(PI * totalTime / 500);
   texture(suntex)
   model(sun);
   pop();
 
   pointLight(255,  255,  255,  0,  -150/4,  0);  
-  rotateY(PI * frameCount / 300);
+  rotateY(PI * totalTime / 300);
   translate(0, 0, 300);
 
   texture(surftex2);
@@ -1559,7 +1574,7 @@ function planets() {
   pointLight(255,  255,  255,  9999, 0, -100); 
   pointLight(255,  255,  255,  9999, 0, -100); 
   
-  translate(-1.8 * planetsFramebuffer.width,  0.6 * planetsFramebuffer.height + sin(frameCount*0.021)*20,  -300);
+  translate(-1.8 * planetsFramebuffer.width,  0.6 * planetsFramebuffer.height + sin(totalTime*0.021)*20,  -300);
   texture(surftex1);
   model(planet1);
   planetsFramebuffer.end();
@@ -1655,7 +1670,7 @@ function timewayBlog() {
   
   
   processMouse();
-  blog_playerX -= 5+mouseVel()*0.005;
+  blog_playerX -= 5*delta + mouseVel()*0.005*delta;
 }
 
 function renderEntry(x, imgIndex) {
@@ -1744,7 +1759,7 @@ function runDissParticles() {
   let particleCount = 0;
   for (let i = 0; i < MAX_DISS_PARTICLES; i++) {
     if (dissParticlesBackImg[i] != undefined) {
-      dissParticlesBackY[i] += 1;
+      dissParticlesBackY[i] += delta;
       particleCount++;
       
       if (dissParticlesBackY[i] > height*1.5) {
@@ -1777,7 +1792,7 @@ function dissertation() {
   pop();
   
   processMouse();
-  pageSpinRotation += 0.01+mouseVel()*0.0001;
+  pageSpinRotation += 0.01*delta+mouseVel()*0.0001*delta;
   
   const scl = 0.4*adjustscale;
   const wi = 414*scl;
@@ -1882,7 +1897,7 @@ function otherProjects() {
   
   
   processMouse();
-  otherProjectsSpin += 0.02+mouseVel()*0.0001;
+  otherProjectsSpin += 0.02*delta+mouseVel()*0.0001*delta;
   
   for (let i = 0; i < imgs.length; i++) {
     const d = otherProjectsSpin*noise(i*2835);
@@ -1944,6 +1959,35 @@ function setMode(newmode, clickToChange=true) {
   allowClickToFade = clickToChange;
 }
 
+let stillMode = false;
+function timewayStillMode() {
+  stillMode = true;
+  portalX = -1000;
+  portalY = 0;
+  portalZ = 1000;
+  timeway_playerX = -1130;
+  timeway_playerZ = 506;
+}
+
+let delta = 0;
+let lastFrameMillis = 0;
+let thisFrameMillis = 0;
+const BASE_FRAMERATE = 60;
+let totalTime = 0;
+
+function updateDelta() {
+      lastFrameMillis = thisFrameMillis;
+      thisFrameMillis = millis();
+
+
+      const timeframe = 1000/BASE_FRAMERATE;
+      const livefps = (timeframe/(thisFrameMillis-lastFrameMillis))*BASE_FRAMERATE;
+
+      delta = min(BASE_FRAMERATE/livefps, 7.5);
+      
+      // Also update the time while we're at it.
+      totalTime += delta;
+}
 
 function preload() {
   typewriterFont = loadFont(PATH+"img/SourceCodePro-Regular.ttf");
@@ -1954,10 +1998,14 @@ function preload() {
 }
 
 function setup() {
+  frameRate(60);
   canvas = createCanvas(windowWidth, windowHeight, WEBGL);
   // canvas = createCanvas(600, 400, WEBGL);
   prevMouseX = mouseX;
   prevMouseY = mouseY;
+
+  lastFrameMillis = millis();
+  thisFrameMillis = millis();
   
   setupTimeway();
   setupSketchio();
@@ -2001,9 +2049,9 @@ function draw() {
   
   
   if (modeChangeFade >= 1) {
-    modeChangeFade++;
-    if (modeChangeFade == 30) {
-      // Reset timeway variables
+    const modeChangeFadebefore = modeChangeFade;
+    modeChangeFade += delta;
+    if (modeChangeFadebefore < 30 && modeChangeFade > 30) {  // used to be modeChangeFade == 30
       mode = changeToMode;
     }
     
@@ -2020,4 +2068,6 @@ function draw() {
     clearDepth();
     rect(-width/2, -height/2, width, height);
   }
+  
+  updateDelta();
 }

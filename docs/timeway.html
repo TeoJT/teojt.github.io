@@ -40,6 +40,10 @@
         div.textelement {
             white-space: nowrap;
         }
+        p {
+            font-family: 'Courier Prime', monospace;
+            font-size:22px
+        }
     </style>
 
 <body style="background-color: rgb(255, 255, 255);">
@@ -49,11 +53,12 @@
     <script src="/assets/p5_sketches/thumbnails.js"></script>
     <script>document.addEventListener('DOMContentLoaded', function() {
 setMode(1, false);
+timewayStillMode();
 }, false);</script>
     <!-- <script src="assets/sketches/thumbnails.js" defer></script> -->
 </div>
 		
-<div style="position: relative; z-index: 1; background-color: rgba(0, 0, 0, 0.384); width: 70%; display: block; margin: 12%; padding: 3%; margin-top: 30px;">
+<div style="position: relative; z-index: 1; background-color: rgba(0, 0, 0, 0.5); width: 70%; display: block; margin: 12%; padding: 3%; margin-top: 30px;">
 <a href="index.html">Home</a>
 
 <!-- <img class="twicon" src="/images/twicon-1.png" alt="Twicon 1" style="position: relative; top: 200px; left: 0%; animation-delay: 1.28934s;">
@@ -80,19 +85,22 @@ setMode(1, false);
 
 <img src="/images/timeway_1.png" style="width: 60%; margin: 0 auto; display: block;">
 
-<a>As of now, there are many features, including:</a>
+<br>
+<br>
+<p>
+<a>There are many features, including:</a>
 <ul>
   <li>Running and jumping through realms, and entering portals representing folders.</li>
   <li>Picking up and moving files- this moves your actual files on your computer.</li>
   <li>Creating entries (these are similar to Microsoft OneNote).</li>
-  <li>Customising realms with skies, grass and trees textures as well as background music.</li>
+  <li>Customising realms with skies, grass and tree textures as well as background music.</li>
   <li>Building realms by shaping the ground and growing trees and objects.</li>
   <li>A choice of 100 realm templates to choose from when you enter a new folder.</li>
   <li>File indexer search.</li>
   <li>Standard file stuff like renaming, moving to recycle bin, copying, creating shortcuts etc.</li>
   <li>Caching and many performance-focused features in the background.</li>
 </ul> 
-
+</p>
 <br>
 <br>
 <br>
@@ -268,10 +276,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
         <br>
         <br>
         <br>
-        <a style="font-size: 16px; color: gray">Templates are pre-made realms that you can choose when entering an empty folder. Without templates, the download size will be smaller but the templates menu will not appear.
+        <a style="font-size: 16px; color: gray">Templates are pre-made realms that you can choose when entering an empty folder. Without templates, the download size will be smaller but templates will not be available.
         <br>
         <br>
-        Please note the Android version is very experimental. Once you download the app, you will need to enable special permissions to access all files.
+        Please note that the Android version is very experimental. Once you download the app, you will need to enable special permissions to access all files.
         </a>
         <br>
     </div>
@@ -282,6 +290,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
         <br>
         Once complete, extract the files from the zip folder and run "Timeway.exe" on Windows, or right-click and click "Run as application" on Linux.
         <br>
+        On Windows, you may get a "Windows protected your PC" warning. Click "more info" and click "run anyway".
+        <br>
+        The reason for this warning is because the application is not signed. Signing it would require purchasing an expensive certificate, which, alas, I cannot afford, sadly.
         <br>
         <!-- If you're using Android, installation involves more steps due to the experimental nature of the Android port. Refer to <a href="https://github.com/TeoJT/timeway/releases/tag/v0.1.2">this section on the GitHub release page</a> for more information. -->
         </p>

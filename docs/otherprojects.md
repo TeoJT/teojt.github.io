@@ -4,7 +4,7 @@ title: Other projects
 ---
 
 <h3>Terminal calendar</h3>
-<p>A Python command-line tool for Linux which displays a coloured calendar and displays scheduled events. This project was created to learn about Python programming back in my 2nd year semester 1 of university.</p>
+<p>A Python command-line tool for Linux which displays a coloured calendar and displays scheduled events. This project was created to learn about Python programming back in my 2nd year of university.</p>
 <a href="https://github.com/TeoJT/terminal-calendar">https://github.com/TeoJT/terminal-calendar</a>
 <br>
 <br>
@@ -34,6 +34,7 @@ title: Other projects
 
 <h3>Sketchiepad</h3>
 <p>A rudimentary tool/framework for making animations with code within Processing. This effectively did a number of workload-reducing stuff such as loading images automatically, syncing music with the animation, and moving/scaling sprites. This has helped me to earn over £300 through online comissions. This has now been superceded by <a href="https://github.com/TeoJT/Sketchio">Sketchio</a>.</p>
+<a href="https://github.com/TeoJT/sketchiepad">https://github.com/TeoJT/sketchiepad</a>
 <br>
 <br>
 <br>
@@ -61,7 +62,7 @@ title: Other projects
 
 
 <h3>C & ARM Assembly coursework</h3>
-<p>In this university coursework, the task was to assemble a circuit with a Raspberry Pi and write low-level code to access the hardware using C and Assembly, the later being the language I programmed. This coursework involved logical programming of low-level ARM assembly and strengthened my knowledge of hardware.
+<p>In this university coursework, the task was to assemble a circuit with a Raspberry Pi and write low-level code to access the hardware using C and Assembly, the latter being the language I programmed in. This coursework involved logical programming of low-level ARM assembly and strengthened my knowledge of hardware.
 <a href="https://github.com/TeoJT/arm-mastermind">https://github.com/TeoJT/arm-mastermind</a>
 <br>
 <br>
