@@ -1052,7 +1052,7 @@ function setupSketchio() {
   // img_play_128 = loadImage(dir+"play_128.png");
   
   for (let i = 0; i < 8; i++) {
-    img_dancer[i] = loadImage(dir+"n"+str(i+1)+".png");
+    img_dancer[i] = loadImage(dir+"nael"+str(i+1)+".png");
     // print(dir+"n"+str(i+1)+".png");
   }
   
@@ -1128,6 +1128,9 @@ function sketchio() {
     textScrollY = -HEIGHT+150;
   }
   
+  // Sketchio program
+  runSketchioProgram();
+  
   // Upperbar
   fill(BARS_COLOR);
   rect(0, 0, 1500.0, 100.0);
@@ -1190,7 +1193,6 @@ function sketchio() {
   image(img_pause_128, 10.0, HEIGHT-52.5, 50.0, 50.0);
   
   // End auto-gen stuff
-  runSketchioProgram();
   
   pop();
   gl.enable(gl.DEPTH_TEST);
@@ -1236,8 +1238,13 @@ function runSketchioProgram() {
   rect(x, y, wi, hi);
   
   resetShader();
+
   
-  image(img_dancer[(((beat)%8))], 102, 190);
+  const s = beatSaw()*8;
+  const ss = s*s;
+
+  
+  image(img_dancer[(((beat)%8))], 133, 190+ss, 512, 512-ss);
   
   
   flashKick();

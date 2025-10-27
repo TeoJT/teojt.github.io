@@ -42,6 +42,7 @@ title: Other projects
 
 <h3>Shaders</h3>
 <p>A collection of my shaders on ShaderToy.</p>
+<p>Link to ShaderToy profile coming soon!</p>
 <br>
 <br>
 <br>
@@ -63,6 +64,7 @@ title: Other projects
 
 <h3>C & ARM Assembly coursework</h3>
 <p>In this university coursework, the task was to assemble a circuit with a Raspberry Pi and write low-level code to access the hardware using C and Assembly, the latter being the language I programmed in. This coursework involved logical programming of low-level ARM assembly and strengthened my knowledge of hardware.
+<br>
 <a href="https://github.com/TeoJT/arm-mastermind">https://github.com/TeoJT/arm-mastermind</a>
 <br>
 <br>
